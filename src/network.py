@@ -10,19 +10,19 @@ device = torch.device("cuda:0")
 class GCNModel(nn.Module):
     def __init__(self,
                  nfeat,
-                 nhid,                  #128
+                 nhid,                  
                  nclass,
-                 nhidlayer,             #1
-                 dropout,               #0.5
+                 nhidlayer,          
+                 dropout,               
                  baseblock="mutigcn",
                  inputlayer="gcn",
                  outputlayer="gcn",
-                 nbaselayer=0,          #1
+                 nbaselayer=0,         
                  activation=lambda x: x,
-                 withbn=True,           #F
-                 withloop=True,         #F
-                 aggrmethod="add",      #cat
-                 mixmode=False):        #T
+                 withbn=True,         
+                 withloop=True,        
+                 aggrmethod="add",    
+                 mixmode=False):      
         super(GCNModel, self).__init__()
         self.mixmode = mixmode
         self.dropout = dropout
